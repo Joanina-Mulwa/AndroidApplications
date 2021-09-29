@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         editTextNumber = findViewById(R.id.editTextNumber);
         editTextNumber2 = findViewById(R.id.editTextNumber2);
         editTextNumber3 = findViewById(R.id.editTextNumber3);
-        //editTextNumber4 = findViewById(R.id.editTextNumber4);
         textView2 = findViewById(R.id.textView2);
 
         //get values from the edit texts
