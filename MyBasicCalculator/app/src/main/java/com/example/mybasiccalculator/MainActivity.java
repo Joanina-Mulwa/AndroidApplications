@@ -3,14 +3,13 @@ package com.example.mybasiccalculator;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mybasiccalculator.databinding.ActivityMainBinding;
-
 import android.text.SpannableStringBuilder;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import org.mariuszgromada.math.mxparser.*;
 import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -193,6 +192,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void equalsBTN(View view){
+
+        String userExp = display.getText().toString();
+        userExp = userExp.replaceAll("/", "/");
+        userExp = userExp.replaceAll("\\*", "*");
+
+        Expression exp = new Expression(userExp);
+        String result = String.valueOf(exp.calculate());
+
+        display.setText(result);
+        display.setSelection(result.length());
 
     }
 
