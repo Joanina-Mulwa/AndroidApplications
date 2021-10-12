@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Capture student details</string>
+
+    <string name="header">Please input your details</string>
+
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="surName">Surname</string>
+    <string name="gender">Gender</string>
+    <string name="dob">Date of Birth</string>
+    <string name="age">Age</string>
+    <string name="id">ID</string>
+    <string name="email">Email Address</string>
+    <string name="address">Home Address</string>
+    <string name="institution">Institution</string>
+    <string name="school">School</string>
+    <string name="department">Department</string>
+    <string name="course">Course</string>
+    <string name="yearOfStudy">Year Of Study</string>
+    <string name="semesterOfStudy">Semester Of Study</string>
+    <string name="regNumber">Registration Number</string>
+
+    <string name="editFirstName" />
+    <string name="editLastName" />
+
+    <string name="submit">SUBMIT</string>
+
+
+</resources>
