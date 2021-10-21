@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Implement_Intent">
         <activity
+            android:name=".SavedDetails"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
