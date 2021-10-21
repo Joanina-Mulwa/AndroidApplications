@@ -1,11 +1,22 @@
 <resources>
     <string name="app_name">Social Media Channels</string>
-    <string name="list_view">ListView</string>
+
     <string name="facebook">Social Media Channel: Facebook</string>
+    <string name="list_view">ListView</string>
+
     <string name="whatsapp">Social Media Channel: Whatsapp</string>
+    <string name="chats">Chats</string>
+    <string name="groups">Groups</string>
+    <string name="status">Status</string>
+    <string name="calls">Calls</string>
+
     <string name="youtube">Social Media Channel: Youtube</string>
+
     <string name="tiktok">Social Media Channel: Tiktok</string>
+
     <string name="vid_mate">Social Media Channel: Vid-mate</string>
+
     <string name="tube_mate">Social Media Channel: Tube-mate</string>
+
     <string name="text_View">Welcome To Facebook</string>
 </resources>

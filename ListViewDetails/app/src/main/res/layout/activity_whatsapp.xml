@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Whatsapp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chats"
+                android:text="@string/chats"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="#808080"
+                android:background="#055F56"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/groups"
+                android:text="@string/groups"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="#808080"
+                android:background="#055F56"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/status"
+                android:text="@string/status"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="#808080"
+                android:background="#055F56"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                 />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/calls"
+                android:text="@string/calls"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="#808080"
+                android:background="#055F56"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                 />
+
+        </TableRow>
+
+
+
+    </TableLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
