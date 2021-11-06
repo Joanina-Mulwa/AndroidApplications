@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     //Main Activity inherits this class
 
     private EditText name,regNo,gender,email,id,phoneNumber;
+    Button button;
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
         //binding
         name = findViewById(R.id.name);
         regNo = findViewById(R.id.regNo);
@@ -29,6 +32,28 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         id = findViewById(R.id.id);
         phoneNumber = findViewById(R.id.phoneNumber);
+
+        button = findViewById(R.id.nextBTN);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //SINGLE PASS
+//                Intent i = new Intent(getApplicationContext(),MainActivity2.class);
+//                text = name.getText().toString();
+//                i.putExtra("keyName", text);
+//                startActivity(i);
+
+                //BUNDLE PASS
+                Intent i = new Intent(getApplicationContext(),MainActivity2.class);
+                text = name.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("keyName",text);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+        });
+
+
 
         Details obj = new Details("Joey", "C026","Female", "jeey@gmail", 1234567890, 3001);
         obj.name="Joey";
@@ -60,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
        //OBJECT :  Intent intent = new Intent()
 
         //Two categories: Implicit and explicit
-        //Explicit intent are used to start other applications within the operating system platform
+        //Implicit intent are used to start other applications within the operating system platform
         //eg if you need an app that will use your camera
 
-        //Implicit intent are used to start activities
+        //Explicit intent are used to start other activities
 
        // created on the on create method of the activity you are jumping from.
 
@@ -131,13 +156,14 @@ public class MainActivity extends AppCompatActivity {
 //                bundle.putIntExtra("key1",234);
 //
 //                intent3.putExtras(bundle);
+                // startActivity(intent3);
 
 
 
        // Receive Bundle
         //0 is the default value
 //                Intent intent3 = getIntent();
-//                bundle et = new Bundle();
+//                Bundle et = new Bundle();
 //                et.getStringExtras("keyName");
 //                et.getStringExtras("keyId", 0);
 //                et.getStringExtras("keyPhoneNumber", 0);
@@ -149,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     // OCT 7th Commented Notes
     // this is where you insert your own methods
     // has visibility specifier eg public, private, protected
