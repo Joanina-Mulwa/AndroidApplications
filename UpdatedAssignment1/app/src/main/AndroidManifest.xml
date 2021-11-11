@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UpdatedAssignment1">
         <activity
+            android:name=".AltTabbedLayout"
+            android:exported="false" />
+        <activity
+            android:name=".TabbedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/Theme.UpdatedAssignment1.NoActionBar" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

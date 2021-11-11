@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".SignupActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editUsername"
+            android:id="@+id/editUsernameSignUp"
             android:layout_marginStart="10dp"/>
 
     </LinearLayout>
@@ -43,7 +43,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editPassword"
+            android:id="@+id/editPasswordSignup"
             android:layout_marginStart="10dp"
             android:inputType="textPassword"/>
 
@@ -56,23 +56,15 @@
         android:layout_marginTop="60dp"
         android:gravity="center">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonLogin"
-        android:layout_marginStart="10dp"
-        android:text="@string/login">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonLogin"
+            android:onClick="SubmitDetails"
+            android:layout_marginStart="10dp"
+            android:text="@string/submit">
 
-    </androidx.appcompat.widget.AppCompatButton>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonSignup"
-        android:text="@string/signup"
-        android:layout_marginStart="50dp">
-
-    </androidx.appcompat.widget.AppCompatButton>
+        </androidx.appcompat.widget.AppCompatButton>
     </LinearLayout>
 
 

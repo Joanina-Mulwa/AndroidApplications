@@ -4,4 +4,9 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="signup">Sign Up</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">REGISTER</string>
+    <string name="tab_text_2">PURCHASE</string>
+    <string name="tab_text_3">CHECK OUT</string>
 </resources>
