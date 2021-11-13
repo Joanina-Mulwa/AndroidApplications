@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UpdatedAssignment1">
         <activity
-            android:name=".AltTabbedLayout"
-            android:exported="false" />
-        <activity
             android:name=".TabbedActivity"
             android:exported="false"
             android:label="@string/title_activity_tabbed"
