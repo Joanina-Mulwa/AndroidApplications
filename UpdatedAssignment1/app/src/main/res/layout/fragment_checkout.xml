@@ -3,12 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".CheckoutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Checkout Fragment." />
+        android:id="@+id/checkout_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button_check_out"
+        android:layout_marginTop="260dp"
+        android:onClick="checkOutPurchase"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Checkout"
+        tools:ignore="UsingOnClickInXml" />
+
 
 </FrameLayout>

@@ -5,10 +5,92 @@
     android:layout_height="match_parent"
     tools:context=".FragmentPurchase">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Purchase Fragment" />
+        android:layout_height="wrap_content"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/samsung_tv" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="SAMSUNG UHD TV\nPRICE: Ksh 90,000"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/samsung_add_to_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:onClick="samsungAddedToCart"
+                    android:text="Add to Cart" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/lg_oled_tv" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="LG OLED 4K TV\nPRICE: Ksh 110,000"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:onClick="lgAddedToCart"
+                    android:id="@+id/lg_add_to_cart"
+                    android:text="Add to Cart" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/hisense_gaming_tv" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="HISENSE ULED 4K GAMING TV\nPRICE: Ksh 150,000"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:id="@+id/hisense_add_to_cart"
+                    android:onClick="hisenseAddedToCart"
+                    android:text="Add to Cart" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 
 </FrameLayout>
