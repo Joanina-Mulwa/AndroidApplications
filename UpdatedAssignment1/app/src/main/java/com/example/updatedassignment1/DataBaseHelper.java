@@ -94,8 +94,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from USER_CREDENTIALS where Username=?", new String[]{name});
         if(cursor.getCount()>0){
             long result = db.delete("USER_CREDENTIALS", "Username=?", new String[]{name});
-            if(result == -1) return false;
-            else return true;
+            return result != -1;
         }
         else return false;
     }
