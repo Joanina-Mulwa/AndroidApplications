@@ -48,7 +48,8 @@ public class SignupActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "New Entry Inserted", Toast.LENGTH_SHORT).show();
             //Integer intent = new Intent(getApplicationContext(),mainACTIVITY2);
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         } else
-            Toast.makeText(getApplicationContext(), "Error Inserting New Entry", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), nameText + " Already Exists.", Toast.LENGTH_SHORT).show();
     }
 }

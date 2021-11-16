@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.deleteUserWithName("");
-                db.printDatabaseContents();//database has every detail. cursor value = 0;jgj
+                //db.deleteUserWithName("");
+                db.printDatabaseContents("REGISTER_CREDENTIALS");//database has every detail. cursor value = 0;jgj
 
                 boolean isUserExist = db.verifyThisUser(editUsername.getText().toString(), editPassword.getText().toString());
 
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Login Success Welcome ", Toast.LENGTH_LONG).show();
                     //Start new activity:
                     startActivity(new Intent(getApplicationContext(), TabbedActivity.class));
+                    finish();
 
                 }
                 else{

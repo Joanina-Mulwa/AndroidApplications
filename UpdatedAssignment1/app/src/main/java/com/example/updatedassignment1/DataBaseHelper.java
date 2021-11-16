@@ -14,19 +14,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(Context context){
         super(context,"UserData.db", null, 1);
-        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE REGISTER_CREDENTIALS(ID INTEGER PRIMARY KEY, Fullnames TEXT, Address TEXT, Gender TEXT)");
         db.execSQL("CREATE TABLE USER_CREDENTIALS(Username TEXT PRIMARY KEY , Password TEXT)");
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
         db.execSQL("DROP TABLE IF EXISTS USER_CREDENTIALS");
+        db.execSQL("DROP TABLE IF EXISTS REGISTER_CREDENTIALS");
 
     }
 
@@ -39,15 +40,28 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long result = db.insert("USER_CREDENTIALS", null, contentValues);
 
-        if (result == -1)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return result != -1;
+    }
 
+    public boolean insertRegisterData(int idNumber, String fullNames, String address, String gender){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("ID", idNumber);
+        contentValues.put("Fullnames", fullNames);
+        contentValues.put("Address", address);
+        contentValues.put("Gender", gender);
+
+        long result = db.insert("REGISTER_CREDENTIALS", null, contentValues);
+
+        return result != -1;
+    }
+
+    public boolean retrieveRegisterDataForUserWithId(int idNumber){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID=?",
+                new String[]{String.valueOf(idNumber)});
+
+        return cursor.getCount() != -1;
     }
 
     public Cursor getData(){
@@ -80,8 +94,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from USER_CREDENTIALS where Username=?", new String[]{name});
         if(cursor.getCount()>0){
             long result = db.delete("USER_CREDENTIALS", "Username=?", new String[]{name});
-            if(result == -1) return false;
-            else return true;
+            return result != -1;
         }
         else return false;
     }
@@ -96,10 +109,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void printDatabaseContents(){
+    public void printDatabaseContents(String tableName){
+
+        //Tables are USER_CREDENTIALS : REGISTER_CREDENTIALS
 
         SQLiteDatabase DB=this.getWritableDatabase();
-        Cursor cursor=DB.rawQuery("Select * from USER_CREDENTIALS", null);
+        Cursor cursor=DB.rawQuery("Select * from " + tableName, null);
         if (cursor.moveToFirst()) {
             do {
                 StringBuilder sb = new StringBuilder();
