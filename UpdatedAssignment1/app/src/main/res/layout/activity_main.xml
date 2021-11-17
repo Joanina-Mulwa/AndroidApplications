@@ -35,17 +35,38 @@
         android:layout_marginTop="60dp">
 
         <TextView
+            android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:id="@+id/textPassword"
-            android:layout_marginStart="10dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editPassword"
             android:layout_marginStart="10dp"
-            android:inputType="textPassword"/>
+            android:text="@string/password" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:inputType="textPassword" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/showPasswordBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:contentDescription=""
+                android:onClick="showHidePassword"
+                android:alpha="1"
+                android:padding="15dp"
+                app:srcCompat="@drawable/show_password" />
+        </RelativeLayout>
+
 
     </LinearLayout>
 

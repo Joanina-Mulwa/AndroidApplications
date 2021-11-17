@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/drawable/show_password.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/activity_alt_tabbed_layout.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/activity_main.xml" value="0.15555555555555556" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/activity_signup.xml" value="0.1796875" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/activity_tabbed.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/UpdatedAssignment1/app/src/main/res/layout/checkout_tab.xml" value="0.17300724637681159" />

@@ -6,14 +6,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText editUsername, editPassword;
     private Button buttonLogin, buttonSignup;
+    private ImageButton buttonShowPassword;
     DataBaseHelper db;
     //public String userName, password;
 
@@ -27,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonSignup = findViewById(R.id.buttonSignup);
+        buttonShowPassword=findViewById(R.id.showPasswordBtn);
 
         /*userName = editUsername.getText().toString();
         password = editPassword.getText().toString();*/
-
 
         //insert data
         buttonSignup.setOnClickListener(new View.OnClickListener() {
@@ -65,5 +70,27 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public  void showHidePassword(View v){
+
+        if(v.getId()==R.id.showPasswordBtn){
+
+            if(editPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance()))
+            {
+                ((ImageButton)(v)).setImageResource(R.drawable.show_password);
+
+                //Show Password
+                editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            }
+            else{
+                ((ImageButton)(v)).setImageResource(R.drawable.show_password);
+
+                //Hide Password
+                editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+            }
+        }
+
     }
 }
