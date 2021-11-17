@@ -15,5 +15,6 @@
     <string-array name="gender_options">
         <item>Male</item>
         <item>Female</item>
+        <item>Non-Binary</item>
     </string-array>
 </resources>
