@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/MyBasicCalculator/app/src/main/res/drawable/backspace.xml" value="0.1111111111111111" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/MyBasicCalculator/app/src/main/res/drawable/circle.xml" value="0.1111111111111111" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/AndroidApplications/MyBasicCalculator/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/backspace.xml" value="0.34322916666666664" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.34322916666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.264" />
