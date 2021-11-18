@@ -43,6 +43,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 fragmentToReturn = new CheckoutFragment();
                 break;
+
         }
         return fragmentToReturn;
     }

@@ -58,10 +58,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public boolean retrieveRegisterDataForUserWithId(int idNumber){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID=?",
-                new String[]{String.valueOf(idNumber)});
+        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID="+idNumber, null);
 
-        return cursor.getCount() != -1;
+        System.out.println("Value of Cursor when retrieving is = " + cursor.getCount());
+        return cursor.getCount() > 0;
     }
 
     public Cursor getData(){
@@ -94,6 +94,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from USER_CREDENTIALS where Username=?", new String[]{name});
         if(cursor.getCount()>0){
             long result = db.delete("USER_CREDENTIALS", "Username=?", new String[]{name});
+            return result != -1;
+        }
+        else return false;
+    }
+
+    public boolean deleteUserWithId(int idNumber){
+        SQLiteDatabase db  = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID=?", new String[]{String.valueOf(idNumber)});
+        if(cursor.getCount()>0){
+            long result = db.delete("REGISTER_CREDENTIALS", "ID=?", new String[]{String.valueOf(idNumber)});
             return result != -1;
         }
         else return false;

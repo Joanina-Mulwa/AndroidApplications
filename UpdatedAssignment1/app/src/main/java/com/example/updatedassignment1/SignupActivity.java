@@ -29,7 +29,7 @@ public class SignupActivity extends AppCompatActivity {
         String passwordText = editPassword.getText().toString();
 
         if(nameText.length() < 1){
-            editUsername.setError("Enter valid Username idiot.");
+            editUsername.setError("Enter valid Username ");
             editUsername.requestFocus();
             return;
         }

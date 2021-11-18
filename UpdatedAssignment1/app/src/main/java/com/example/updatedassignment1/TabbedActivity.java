@@ -61,6 +61,8 @@ public class TabbedActivity extends AppCompatActivity {
         });
     }
 
+    private boolean isUserFilledAllRegister;
+    private String registerGender,registerFullName,registerAddress;
     public void submitRegisterDetails(View v){
         //Declare the widgets when the button is clicked.
         EditText registerFullNameET = findViewById(R.id.fragmentRegisterFullNameEditText);
@@ -69,10 +71,31 @@ public class TabbedActivity extends AppCompatActivity {
         TextView genderTextView = findViewById(R.id.gender_text_view);
         Spinner genderSpinner = findViewById(R.id.register_gender_spinner);
 
+        //Check to ensure the user has input correct data.
+        if(registerFullNameET.getText().toString().length() < 1){
+            registerFullNameET.setError("Enter Full Name!");
+            registerFullNameET.requestFocus();
+            return;
+        }
 
-        String registerGender = genderSpinner.getSelectedItem().toString();
-        String registerFullName = registerFullNameET.getText().toString();
-        String registerAddress = registerAddressET.getText().toString();
+        if(registerAddressET.getText().toString().length() < 1){
+            registerAddressET.setError("Enter Address!");
+            registerAddressET.requestFocus();
+            return;
+        }
+
+        if(registerIdNumberET.getText().toString().length() < 1){
+            registerIdNumberET.setError("Enter ID Number!");
+            registerIdNumberET.requestFocus();
+            return;
+        }
+
+        isUserFilledAllRegister = true;
+
+
+         registerGender = genderSpinner.getSelectedItem().toString();
+         registerFullName = registerFullNameET.getText().toString();
+         registerAddress = registerAddressET.getText().toString();
         registerIdNumber = Integer.parseInt(String.valueOf(registerIdNumberET.getText()));
 
         boolean isInsertRegisterData = db.insertRegisterData(registerIdNumber, registerFullName, registerAddress, registerGender);
@@ -81,10 +104,16 @@ public class TabbedActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(), "ERROR! Details NOT Inserted!", Toast.LENGTH_LONG).show();
         }
-        genderTextView.setText(registerGender);
+        //genderTextView.setText(registerGender);
     }
 
     public void checkOutPurchase(View v){
+
+        if(!isUserFilledAllRegister){
+            Toast.makeText(getApplicationContext(), "Fill all register details first.!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         TextView checkoutTextView = findViewById(R.id.checkout_text_view);
         db.printDatabaseContents("REGISTER_CREDENTIALS");
 
@@ -96,20 +125,32 @@ public class TabbedActivity extends AppCompatActivity {
         else{
             Toast.makeText(getApplicationContext(), "Error in retrieval!", Toast.LENGTH_SHORT).show();
         }
+
+        String checkOutDetails = "Name : "+registerFullName+" \n\nShipping Address : "+registerAddress+" \n\nTotal Price : " +totalCartPrice+
+                "\n\n\nShop with us again!\nThank you!";
+
+        checkoutTextView.setText(checkOutDetails);
     }
 
     int samsungTvsAdded = 0;
     public void samsungAddedToCart(View v){
         ++samsungTvsAdded;
+        if(checkIfItemsMoreThan3(samsungTvsAdded)){
+            return;
+        }
         int samsungPrice = 90000;
         totalCartPrice += samsungPrice;
         Button samsungAddCartButton = findViewById(R.id.samsung_add_to_cart);
         samsungAddCartButton.setText("Added (" + String.valueOf(samsungTvsAdded) + ")");
+
     }
 
     int lgTvsAdded = 0;
     public void lgAddedToCart(View v){
         ++lgTvsAdded;
+        if(checkIfItemsMoreThan3(lgTvsAdded)){
+            return;
+        }
         int lgPrice = 110000;
         totalCartPrice += lgPrice;
         Button samsungAddCartButton = findViewById(R.id.lg_add_to_cart);
@@ -119,10 +160,21 @@ public class TabbedActivity extends AppCompatActivity {
     int hisenseTvsAdded = 0;
     public void hisenseAddedToCart(View v){
         ++hisenseTvsAdded;
+        if(checkIfItemsMoreThan3(hisenseTvsAdded)){
+            return;
+        }
         int hisensePrice = 150000;
         totalCartPrice += hisensePrice;
         Button samsungAddCartButton = findViewById(R.id.hisense_add_to_cart);
         samsungAddCartButton.setText("Added (" + String.valueOf(hisenseTvsAdded) + ")");
+    }
+
+    private boolean checkIfItemsMoreThan3(int numberOfItems){
+        if(numberOfItems > 3){
+            Toast.makeText(getApplicationContext(), "Max items is 3", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return false;
     }
 
 }
