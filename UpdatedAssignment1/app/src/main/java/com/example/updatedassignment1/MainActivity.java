@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonSignup = findViewById(R.id.buttonSignup);
-        buttonShowPassword=findViewById(R.id.showPasswordBtn);
+        //buttonShowPassword=findViewById(R.id.showPasswordBtn);
 
         /*userName = editUsername.getText().toString();
         password = editPassword.getText().toString();*/
@@ -64,15 +64,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Login Failed! Check details or Sign UP!", Toast.LENGTH_LONG).show();
-                    editUsername.setError("Check Username or Password!");
-                    editPassword.setError("");
+                    editUsername.setError("Check Username!");
+                    editPassword.setError("Check Password!");
+                    editUsername.requestFocus();
                     editUsername.requestFocus();
                 }
             }
         });
     }
 
-    public  void showHidePassword(View v){
+/*    public  void showHidePassword(View v){
 
         if(v.getId()==R.id.showPasswordBtn){
 
@@ -92,5 +93,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-    }
+    }*/
 }

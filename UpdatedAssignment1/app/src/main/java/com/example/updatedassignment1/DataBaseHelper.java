@@ -53,7 +53,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long result = db.insert("REGISTER_CREDENTIALS", null, contentValues);
 
-        return result != -1;
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+        //return result != -1;
     }
 
     public boolean retrieveRegisterDataForUserWithId(int idNumber){

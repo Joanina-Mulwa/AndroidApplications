@@ -61,11 +61,16 @@
                 android:layout_marginEnd="5dp"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:contentDescription=""
-                android:onClick="showHidePassword"
                 android:alpha="1"
                 android:padding="15dp"
                 app:srcCompat="@drawable/show_password" />
         </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
 
 
     </LinearLayout>
