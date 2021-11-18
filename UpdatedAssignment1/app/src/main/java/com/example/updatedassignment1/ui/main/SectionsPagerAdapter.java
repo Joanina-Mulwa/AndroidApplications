@@ -2,7 +2,6 @@ package com.example.updatedassignment1.ui.main;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
@@ -44,6 +43,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 fragmentToReturn = new CheckoutFragment();
                 break;
+
         }
         return fragmentToReturn;
     }
