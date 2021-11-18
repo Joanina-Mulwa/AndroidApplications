@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         tools:ignore="SpeakableTextPresentCheck">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <!--<androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+-->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="SAMSUNG UHD TV\nPRICE: Ksh 90,000"
+                    android:text="@string/samsung_uhd_tv_nprice_ksh_90_000"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="HISENSE ULED 4K GAMING TV\nPRICE: Ksh 150,000"
+                    android:text="@string/hisense_text"
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
@@ -87,7 +87,9 @@
                     android:onClick="hisenseAddedToCart"
                     android:text="Add to Cart" />
 
+<!--
             </androidx.appcompat.widget.LinearLayoutCompat>
+-->
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

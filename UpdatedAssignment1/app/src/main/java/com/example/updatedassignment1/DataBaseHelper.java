@@ -53,21 +53,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long result = db.insert("REGISTER_CREDENTIALS", null, contentValues);
 
-        if(result == -1){
-            return false;
-        }
-        else{
-            return true;
-        }
-        //return result != -1;
+        return result != -1;
     }
 
     public boolean retrieveRegisterDataForUserWithId(int idNumber){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID="+idNumber, null);
+        Cursor cursor = db.rawQuery("select * from REGISTER_CREDENTIALS where ID=?", new String[]{Integer.toString(idNumber)});
 
         System.out.println("Value of Cursor when retrieving is = " + cursor.getCount());
-        return cursor.getCount() > 0;
+
+        if(cursor.getCount() > 0) return true;
+        else return false;
+        //return cursor.getCount() > 0;
     }
 
     public Cursor getData(){

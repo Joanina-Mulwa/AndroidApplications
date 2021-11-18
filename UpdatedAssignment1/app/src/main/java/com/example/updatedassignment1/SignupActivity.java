@@ -29,7 +29,7 @@ public class SignupActivity extends AppCompatActivity {
         String passwordText = editPassword.getText().toString();
 
         if(nameText.length() < 1){
-            editUsername.setError("Enter valid Username idiot.");
+            editUsername.setError("Enter valid Username ");
             editUsername.requestFocus();
             return;
         }
@@ -49,7 +49,10 @@ public class SignupActivity extends AppCompatActivity {
             //Integer intent = new Intent(getApplicationContext(),mainACTIVITY2);
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
-        } else
+        } else {
             Toast.makeText(getApplicationContext(), nameText + " Already Exists.", Toast.LENGTH_SHORT).show();
+            editUsername.setError(nameText + " Already Exists!");
+            editUsername.requestFocus();
+        }
     }
 }

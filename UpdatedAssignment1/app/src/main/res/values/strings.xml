@@ -12,8 +12,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="catch_phrase">You Made it Boi!</string>
+    <string name="samsung_uhd_tv_nprice_ksh_90_000">SAMSUNG UHD TV\nPRICE: Ksh 90,000</string>
+    <string name="hisense_text">HISENSE ULED 4K GAMING TV\nPRICE: Ksh 150,000</string>
     <string-array name="gender_options">
         <item>Male</item>
         <item>Female</item>
+        <item>Non-Binary</item>
     </string-array>
 </resources>

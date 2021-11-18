@@ -20,11 +20,21 @@
             android:text="@string/username"
             android:layout_marginStart="10dp"/>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editUsername"
-            android:layout_marginStart="10dp"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="50dp"
+            android:hint="Enter full name.">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/editUsername"
+                android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </LinearLayout>
 
@@ -35,43 +45,28 @@
         android:layout_marginTop="60dp">
 
         <TextView
-            android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/password" />
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:text="@string/password"
+            android:id="@+id/textPassword"
+            android:layout_marginStart="10dp"/>
 
-            <EditText
-                android:id="@+id/editPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:inputType="textPassword" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/showPasswordBtn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:contentDescription=""
-                android:alpha="1"
-                android:padding="15dp"
-                app:srcCompat="@drawable/show_password" />
-        </RelativeLayout>
-
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="50dp"
+            app:passwordToggleEnabled="true"
+            android:hint="Enter Password.">
 
-        </com.google.android.material.textfield.TextInputEditText>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/editPassword"
+                android:inputType="textPassword"
+                android:layout_height="match_parent"/>
 
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
