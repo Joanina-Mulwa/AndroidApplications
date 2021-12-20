@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MobileServicesListView</string>
+    <string-array name="services">
+        <item>Safaricom</item>
+        <item>Send Money</item>
+        <item>Withdraw Cash</item>
+        <item>Loans and Savings</item>
+        <item>Lipa na Mpesa</item>
+        <item>My Account</item>
+        <item>Please Work Now</item>
+    </string-array>
+</resources>
